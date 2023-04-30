@@ -44,13 +44,16 @@ def show_all(_):
     return result
 
 def show_phone(args):
-    # put some logic here
-    pass
+    name, phone = args
+    owner_phone = USERS[phone]
+    USERS[name] = phone
+    return f' {phone} is owner: {name}'
 
 HANDLERS = {
     'hello': hello_user,
     'add': add_user,
     'change': change_phone,
+    'phone': show_phone,
     'show all': show_all,
     'exit': exit,
     'goodbye': exit,
